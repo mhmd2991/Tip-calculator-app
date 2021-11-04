@@ -1,1 +1,267 @@
+/* Start Global Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --strongCyan: hsl(172, 67%, 45%);
+    --veryDarkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --darkGrayishCyans: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --lightGrayishCyan: hsl(189, 41%, 97%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --mainTransition: .3s;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    line-height: 1.6;
+    background-color: var(--strongCyan);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main .container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--whiteColor);
+    max-width: 921px;
+    border-radius: 20px;
+
+}
+
+.container .box {
+    flex: 1;
+    padding: 20px;
+}
+
+.box .top .title,
+.box .bottom .title,
+.box .middle .title {
+    color: var(--darkGrayishCyan);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box .input-form {
+    position: relative;
+}
+
+.box .input {
+    border: none;
+    background-color: var(--lightGrayishCyan);
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: var(--veryDarkCyan);
+    font-weight: bold;
+    text-align: right;
+    width: 380px;
+    max-width: 100%;
+    border: 1px solid transparent;
+    transition: var(--mainTransition);
+    cursor: pointer;
+}
+
+.box .input:focus {
+    outline: none;
+}
+
+.box .input:hover {
+    border-color: var(--veryDarkCyan);
+}
+
+.box .fas {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    color: var(--darkGrayishCyans);
+    font-size: 18px;
+}
+
+.box .middle {
+    margin: 50px 0;
+}
+
+.box .middle .percentage {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.box .middle .percentage input,
+.box .middle .percentage div {
+    background-color: var(--veryDarkCyan);
+    color: var(--whiteColor);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.box .middle .percentage div.active,
+.box .middle .percentage div:hover,
+.box .middle .percentage input.active {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+}
+
+.box .middle .percentage .custom {
+    background-color: var(--lightGrayishCyan);
+    color: var(--darkGrayishCyans);
+    border: 1px solid transparent;
+}
+
+.box .middle .percentage .custom:hover {
+    border-color: var(--veryDarkCyan);
+}
+
+.box .middle .percentage .custom:focus {
+    outline: none;
+}
+
+.box .middle .percentage .custom:focus::placeholder {
+    opacity: 0;
+}
+
+.box .bottom .input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.box .bottom .input-form > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.error-msg {
+    display: none;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-right: 30px;
+}
+
+.input-form.error .error-msg {
+    display: flex;
+}
+
+.input-form.error #people {
+    border: 1px solid red;
+}
+
+.container .right {
+    background-color: var(--veryDarkCyan);
+    border-radius: 20px;
+    min-height: 100%;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.box .amount,
+.box .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box .amount p,
+.box .total p {
+    color: var(--whiteColor);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box .amount p span,
+.box .total p span {
+    color: var(--darkGrayishCyan);
+    font-size: 14px;
+}
+
+.box .amount .amountVal,
+.box .total .totalVal {
+    color: var(--strongCyan);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.box .btn-reset {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: var(--mainTransition);
+}
+
+.box .btn-reset:hover {
+    background-color: #9fe8df;
+}
+
+.u {
+    top: 38px !important;
+}
