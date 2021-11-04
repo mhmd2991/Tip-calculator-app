@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>-->
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="box">
+                <div class="top">
+                    <p class="title">Bill</p>
+                    <div class="input-form">
+                        <input type="text" name="txt_num" class="input" value="" id="bill">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                </div>
+                <div class="middle">
+                    <p class="title">Select Tip %</p>
+                    <div class="percentage">
+                        <div class="tip" data-cont="5">5%</div>
+                        <div class="tip" data-cont="10">10%</div>
+                        <div class="active tip" data-cont="15">15%</div>
+                        <div class="tip" data-cont="25">25%</div>
+                        <div class="tip" data-cont="50">50%</div>
+                        <input class="custom" type="text" placeholder="Custom">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="input-form">
+                        <div>
+                            <p class="title">Number of People</p>
+                            <small class="error-msg">Can't be zero</small>
+                        </div>
+                        <input type="text" name="txt_people" class="input" value="" id="people">
+                        <i class="u fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="right">
+                    <div class="amount">
+                        <p>Tip Amount <br /><span>/ person</span></p>
+                        <div class="amountVal"></div>
+                    </div>
+                    <div class="total">
+                        <p>Total <br /><span>/ person</span></p>
+                        <div class="totalVal"></div>
+                    </div>
+                    <div class="reset">
+                        <button class="btn-reset" id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="js/main.js"></script>
+
+</html>
